@@ -1,0 +1,83 @@
+/**
+ * Script theme for reveal.js.
+ *
+ * Copyright (C) 2013 Gordon L. Hempton (http://codebrief.com)
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+@font-face {
+    font-family: 'LobsterTwo';
+    src: url('/fonts/LobsterTwo-Regular-webfont.eot');
+    src: url('/fonts//fonts/LobsterTwo-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/LobsterTwo-Regular-webfont.woff') format('woff'),
+         url('/fonts/LobsterTwo-Regular-webfont.ttf') format('truetype'),
+         url('/fonts/LobsterTwo-Regular-webfont.svg#LobsterTwoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LobsterTwo';
+    src: url('/fonts/LobsterTwo-Italic-webfont.eot');
+    src: url('/fonts/LobsterTwo-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/LobsterTwo-Italic-webfont.woff') format('woff'),
+         url('/fonts/LobsterTwo-Italic-webfont.ttf') format('truetype'),
+         url('/fonts/LobsterTwo-Italic-webfont.svg#LobsterTwoItalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'LobsterTwo';
+    src: url('/fonts/LobsterTwo-Bold-webfont.eot');
+    src: url('/fonts/LobsterTwo-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/LobsterTwo-Bold-webfont.woff') format('woff'),
+         url('/fonts/LobsterTwo-Bold-webfont.ttf') format('truetype'),
+         url('/fonts/LobsterTwo-Bold-webfont.svg#LobsterTwoBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LobsterTwo';
+    src: url('/fonts/LobsterTwo-BoldItalic-webfont.eot');
+    src: url('/fonts/LobsterTwo-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/LobsterTwo-BoldItalic-webfont.woff') format('woff'),
+         url('/fonts/LobsterTwo-BoldItalic-webfont.ttf') format('truetype'),
+         url('/fonts/LobsterTwo-BoldItalic-webfont.svg#LobsterTwoBoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+// Override theme settings (see ../template/settings.scss)
+$mainColor: #4E2E2F;
+$headingColor: $mainColor;
+$headingFont: 'LobsterTwo', sans-serif;
+$headingTextShadow: none;
+$headingTextTransform: none;
+$backgroundColor: #FDB98A;
+$linkColor: #9E464D;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: rgba(79, 64, 28, 0.99);
+$heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
+
+// Background generator
+@mixin bodyBackground() {
+  @include radial-gradient( #FDB98A, rgba(255,255,255,1) );
+}
+
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
