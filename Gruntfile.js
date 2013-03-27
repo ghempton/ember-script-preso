@@ -49,9 +49,18 @@ module.exports = function(grunt) {
 					'css/theme/sky.css': 'css/theme/source/sky.scss',
 					'css/theme/moon.css': 'css/theme/source/moon.scss',
 					'css/theme/solarized.css': 'css/theme/source/solarized.scss',
-					'css/theme/script.css': 'css/theme/source/script.scss'
+					'css/theme/script.css': 'css/theme/source/script.scss',
+					'css/main.css': 'css/main.sass'
 				}
 			}
+		},
+
+		coffee: {
+		  compile: {
+		    files: {
+		      'js/main.js': 'js/main.coffee',
+		    }
+		  }
 		},
 
 		jshint: {
@@ -95,9 +104,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 	grunt.loadNpmTasks( 'grunt-contrib-sass' );
+	grunt.loadNpmTasks( 'grunt-contrib-coffee' );
 
 	// Default task
-	grunt.registerTask( 'default', [ 'jshint', 'cssmin', 'uglify' ] );
+	grunt.registerTask( 'default', [ 'jshint', 'cssmin', 'uglify', 'coffee' ] );
 
 	// Theme task
 	grunt.registerTask( 'themes', [ 'sass' ] );

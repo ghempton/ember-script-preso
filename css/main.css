@@ -1,0 +1,19 @@
+figure.example {
+  position: relative;
+  width: 960px;
+  height: 400px;
+  font-size: 40px;
+  line-height: 40px; }
+  figure.example pre {
+    margin: 0;
+    padding: 0;
+    border: none; }
+  figure.example .emberscript, figure.example .javascript {
+    margin: 0;
+    position: absolute;
+    width: 50%;
+    height: 100%; }
+  figure.example .emberscript {
+    left: 0; }
+  figure.example .javascript {
+    right: 0; }

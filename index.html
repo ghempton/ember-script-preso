@@ -16,6 +16,7 @@
 
 		<link rel="stylesheet" href="css/reveal.min.css">
 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/main.css">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -39,7 +40,7 @@
 
 				<section>
 					<h1>EmberScript</h1>
-					<h3>Ember.js infused CoffeeScript</h3>
+					<h3>Ember.js-infused CoffeeScript</h3>
 					<p>
 						<small><a href="http://codebrief.com">Gordon L. Hempton</a> / <a href="http://twitter.com/ghempton">@ghempton</a> / <a href="http://emberscript.com">emberscript.com</a></small>
 					</p>
@@ -47,10 +48,6 @@
 
 				<section>
 					<img src="img/on_drugs.png" alt="OMG EmberScript? You are on drugs.">
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
 				</section>
 
 				<section>
@@ -84,7 +81,7 @@
 				</section>
 
 				<section>
-					<h2>Solution: First Class Support For</h2>
+					<h2>Language Support For</h2>
 					<ul>
 						<li>Getters and setters</li>
 						<li>Classes and mixins</li>
@@ -93,61 +90,73 @@
 				</section>
 
 				<section>
-					<section>
-						<h2>TODO: Object Model Example</h2>
-					</section>
-					<section>
-						<h2>TODO: CoffeeScript Version</h2>
-					</section>
+					<h2>Object Model</h2>
+					<figure class="example #{name}">
+						<pre class="emberscript">class Animal
+
+mixin CanFly
+  fly: -> console.log('flying')
+
+class Bird extends Animal with CanFly
+
+  fly: ->
+    super()
+    console.log('flap wings')</pre>
+						<pre class="javascript"></pre>
+					</figure>
 				</section>
 
 				<section>
-					<section>
-						<h2>TODO: Getters/Setters Example</h2>
-					</section>
-					<section>
-						<h2>TODO: CoffeeScript Version</h2>
-					</section>
+					<h2>Accessors</h2>
+					<figure class="example #{name}">
+						<pre class="emberscript">person.firstName
+
+person.firstName = "Wes"
+
+@person.firstName = "Andrew"
+
+person*.firstName</pre>
+						<pre class="javascript"></pre>
+					</figure>
 				</section>
 
 				<section>
-					<section>
-						<h2>TODO: Computed Properties and Observers Example</h2>
-					</section>
-					<section>
-						<h2>TODO: CoffeeScript Version</h2>
-					</section>
+					<h2>Computed Properties & Observers</h2>
+					<figure class="example #{name}">
+						<pre class="emberscript">class App.PostsController extends Ember.ArrayController
+
+  +computed content.length
+  headerDisplay: ->
+    "#{@content.length} Posts"
+
+  +observer content.length
+  contentChanged: ->
+    console.log "@content changed"</pre>
+						<pre class="javascript"></pre>
+					</figure>
 				</section>
 
 				<section>
-					<section>
-						<h2>TODO: Computed Property Inference Examples</h2>
-					</section>
-				</section>
+					<h2>Dependency Inference</h2>
+					<figure class="example #{name}">
+						<pre class="emberscript">class App.PostsController extends Ember.ArrayController
 
-				<section>
-					<h2>TODO: Backbone with EmberScript</h2>
-				</section>
-
-				<section>
-					<h2>Similar principles to CoffeeScript</h2>
-					<ul>
-						<li>Readability</li>
-						<li>Seemless integration</li>
-					</ul>
+  headerDisplay: ~>
+    "#{@content.length} Posts"</pre>
+						<pre class="javascript"></pre>
+					</figure>
 				</section>
 
 				<section>
 					<h2>Getting Started</h2>
 					<ul>
-						<li><code>gem 'ember-script-rails'</code></li>
+						<li><code>gem 'ember_script-rails'</code></li>
 						<li><code>application_controller.em</code></li>
 					</ul>
 				</section>
 
 				<section>
-					<h3>Haml + CoffeeScript</h3>
-					<h3>Emblem + EmberScript</h3>
+					<h3>Haml : CoffeeScript :: Emblem : EmberScript</h3>
 					<p><a href="http://emblemjs.com">emblemjs.com</a></p>
 				</section>
 
@@ -169,6 +178,11 @@
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
+
+		<script src="js/vendor/jquery-1.8.3.js"></script>
+		<script src="js/vendor/ember-script.js"></script>
+		<script src="js/vendor/ace/ace.js"></script>
+		<script src="js/main.js"></script>
 
 		<script>
 
